@@ -240,8 +240,62 @@ footer .fcrest{width:74px;border-radius:14px;margin:0 auto 16px;box-shadow:0 0 0
 :root[data-theme="light"] .faq-item p{color:var(--muted)}
 :root[data-theme="light"] .servicos{background:linear-gradient(180deg,transparent,rgba(138,95,34,.05),transparent)}
 
+/* ============================================================
+   AJUSTES DE REFINAMENTO
+   - fonte um pouco maior
+   - menos espaços em branco
+   - caixas padronizadas com degradê
+   - tema claro como padrão, texto mais escuro
+   ============================================================ */
+
+/* fonte +pouco */
+html{font-size:105.5%}
+
+/* menos espaços em branco */
+.marca,.servicos,.barbeiros,.contato{padding-top:64px!important;padding-bottom:64px!important}
+.faq{padding-top:56px!important;padding-bottom:56px!important}
+section.block{padding:52px 0!important}
+.hero,.hero-b{padding-top:108px!important;padding-bottom:52px!important}
+.marca .grid{gap:46px}
+.two{gap:42px}
+h2.title{margin:.3rem 0 .8rem}
+.rule{margin-bottom:1.7rem}
+.pix-note{margin-bottom:2.1rem}
+.hero .cta,.hero-b .cta{margin-top:28px}
+.stats{margin-top:24px}
+.barbers{gap:20px}
+.scroll-cue{margin-top:34px}
+
+/* caixas padronizadas + degradê (valem no claro e escuro via variável) */
+:root{--box-grad:linear-gradient(160deg,#191309,#0c0a06)}
+.svc,.stat,.pix-panel,.card,.marca .visual .frame,.chip,.info-list,.mini-info,.map{
+  background:var(--box-grad)!important;border:1px solid var(--line);border-radius:12px
+}
+.svc-grid{gap:14px!important;background:none!important;border:0!important;border-radius:0!important;overflow:visible!important}
+@media(min-width:901px){.svc-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.svc-grid{grid-template-columns:1fr}}
+.svc{padding:30px 24px}
+.svc:hover{border-color:var(--gold3)}
+.info-list,.mini-info{border-top:0;padding:6px 20px}
+.info-row,.mini-info .r{border-bottom:1px solid var(--line)}
+.info-row:last-child,.mini-info .r:last-child{border-bottom:0}
+.map{padding:0;overflow:hidden}
+.chip{border-radius:40px}
+
+/* ===== TEMA CLARO (padrão): mais claro, letra mais escura ===== */
+:root[data-theme="light"]{
+  --ink:#f7f3ea;--ink2:#efe8d8;--panel:#fffdf9;--panel2:#f3ecdd;
+  --cream:#1e150a;--muted:#5b4d32;--line:rgba(138,95,34,.34);
+  --gold1:#5f4118;--gold2:#8a5f22;--gold3:#a9781f;
+  --goldgrad:linear-gradient(180deg,#8a5f22 0%,#a9781f 45%,#6f4a1a 100%);
+  --box-grad:linear-gradient(160deg,#fffefb,#f0e7d5);
+}
+:root[data-theme="light"] .card::before{background:linear-gradient(180deg,rgba(138,95,34,.35),transparent)}
+:root[data-theme="light"] .stat{background:linear-gradient(160deg,#fffefb,#efe6d3)!important}
+
 </style>
-<script>try{if(localStorage.getItem("fdm-theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+<script>try{if(localStorage.getItem("fdm-theme")!=="dark")document.documentElement.setAttribute("data-theme","light")}catch(e){document.documentElement.setAttribute("data-theme","light")}</script>
 </head>
 <body>
 
